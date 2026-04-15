@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main{
+    width: 500px;
+    margin: 50px auto;
+}
+.body_color{
+    background: #faf3e9;
+    padding: 30px;
+}
+p{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    background-color: rgb(95, 188, 2);
+    padding: 10px;
+    color: white;
+    margin-bottom: 30px;
+}
+.form_padding{
+    padding-left: 10px;
+}
+#Stu_name,#Stu_age,#Stu_marks{
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.submit_btn{
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(0, 35, 100);
+    color: aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.submit_btn:hover{
+    background-color: rgb(75, 114, 188);
+}
+.body_2{
+    margin-top: 30px;
+}
