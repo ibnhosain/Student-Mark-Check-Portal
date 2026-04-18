@@ -2,37 +2,91 @@
 <html lang="en">
 
 <head>
+  <!-- Basic character encoding for proper text rendering -->
   <meta charset="UTF-8" />
+
+  <!-- Makes the layout responsive on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Browser tab title -->
   <title>JS Data Types</title>
+
+  <!-- External stylesheet connection -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Main wrapper of the full student portal -->
   <main class="main">
+
+    <!-- Input form section -->
     <div class="body_color">
       <div class="form_padding">
         <h1>Student Portal</h1>
+
+        <!-- Student name input -->
         <p>Name:</p>
         <input id="Stu_name"></input>
+
+        <!-- Student age input -->
         <p>Age:</p>
         <input id="Stu_age"></input>
+
+        <!-- Student marks input -->
         <p>Marks:</p>
         <input id="Stu_marks"></input>
-        <button type="button" class="submit_btn" onclick="showResult()">Check Result</button>
+
+        <!-- Action buttons section -->
+        <div class="d_fex">
+          <!-- Click to calculate and show result -->
+          <button type="button" class="submit_btn" onclick="showResult()">Check Result</button>
+
+          <!-- Click to clear all inputs and outputs -->
+          <button type="button" class="submit_btn" onclick="resetPortal()">Reset</button>
+        </div>
       </div>
     </div>
-    <!-- 2nd portal -->
+
+    <!-- Output/result section -->
     <div class="body_2">
-      <div class="form_padding" id="portal_2nd">
-        <p id="Stu_name_show"></p>
-        <p id="Stu_age_show"></p>
-        <p id="Stu_marks_show"></p>
-        <p id="Stu_grade_show"></p>
-      </div>
+
+      <!-- Result table
+           Initially hidden.
+           It becomes visible only after clicking "Check Result". -->
+      <table id="result_table">
+        <caption>Student Marks Details</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <!-- These cells are filled dynamically from JavaScript -->
+            <td id="Stu_name_show"></td>
+            <td id="Stu_age_show"></td>
+            <td id="Stu_marks_show"></td>
+            <td id="Stu_grade_show"></td>
+            <td id="Stu_Status_show"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Print button
+           Hidden at first.
+           It appears only after result is shown. -->
+      <button type="button" id="print_btn" class="print_btn" onclick="printResult()">
+        Print Result
+      </button>
     </div>
   </main>
 
+  <!-- External JavaScript file connection -->
   <script src="./app.js"></script>
 </body>
 
