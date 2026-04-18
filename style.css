@@ -1,24 +1,61 @@
-*{
+/* =========================
+   Global Reset Styles
+   - Removes default margin/padding
+   - Applies border-box sizing
+   - Sets a common font
+========================= */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.main{
-    width: 500px;
+/* =========================
+   Main container
+   - Centers the portal
+   - Controls maximum width
+========================= */
+.main {
+    width: 100%;
     margin: 50px auto;
+    max-width: 400px;
 }
-.body_color{
+
+/* =========================
+   Button wrapper
+   - Places buttons side by side
+   - Keeps space between them
+========================= */
+.d_fex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =========================
+   Input form background box
+   - Gives a light background
+   - Adds padding and border
+========================= */
+.body_color {
     background: #faf3e9;
     padding: 30px;
+    border: 1px solid wheat;
 }
-p{
+
+/* =========================
+   Label text styling
+========================= */
+p {
     font-size: 18px;
     font-weight: 600;
     margin: 10px 0;
 }
-h1{
+
+/* =========================
+   Main heading style
+========================= */
+h1 {
     text-align: center;
     font-size: 35px;
     font-weight: 800;
@@ -27,15 +64,24 @@ h1{
     color: white;
     margin-bottom: 30px;
 }
-.form_padding{
-    padding-left: 10px;
-}
-#Stu_name,#Stu_age,#Stu_marks{
+
+/* =========================
+   Input field style
+   - Applied to all three inputs
+========================= */
+#Stu_name,
+#Stu_age,
+#Stu_marks {
     font-size: 18px;
     border-radius: 5px;
     font-weight: 500;
 }
-.submit_btn{
+
+/* =========================
+   Main action buttons style
+   - Used for Check Result and Reset
+========================= */
+.submit_btn {
     display: block;
     margin-top: 20px;
     padding: 10px;
@@ -47,9 +93,142 @@ h1{
     cursor: pointer;
     transition: 0.8s;
 }
-.submit_btn:hover{
+
+/* Hover effect for action buttons */
+.submit_btn:hover {
     background-color: rgb(75, 114, 188);
 }
-.body_2{
+
+/* =========================
+   Output/result section wrapper
+========================= */
+.body_2 {
+    width: 100%;
     margin-top: 30px;
+    max-width: 400px;
+}
+
+/* =========================
+   Result table
+   - Hidden by default
+   - Shown only after result is generated
+========================= */
+#result_table {
+    display: none;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto;
+    table-layout: fixed;
+}
+
+/* =========================
+   Table cell common style
+   - Applies to both header and data cells
+========================= */
+#result_table th,
+#result_table td {
+    border: 1px solid #444;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+/* Table header style */
+#result_table th {
+    background: #6dbb1a;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+/* Table data cell style */
+#result_table td {
+    background: #ffffff;
+}
+
+/* Row hover effect for better UI */
+#result_table tr:hover td {
+    background: #f1f7e8;
+}
+
+/* =========================
+   Print button style
+   - Hidden by default
+   - Shown only after result is displayed
+========================= */
+.print_btn {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect for print button */
+.print_btn:hover {
+    background-color: #218838;
+}
+
+/* =========================
+   PRINT MODE STYLING
+   - Only shows result table
+   - Hides form and buttons
+========================= */
+caption{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+@media print {
+
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only result table */
+  #result_table,
+  #result_table * {
+    visibility: visible;
+  }
+
+  /* Position table properly for print */
+  #result_table {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 95%;
+    display: table !important;
+  }
+
+  /* Remove print button from print */
+  #print_btn {
+    display: none !important;
+  }
+
+  /* Improve table appearance in print */
+  #result_table th {
+    background: #6dbb1a !important;
+    color: #fff !important;
+
+    /* Ensure background prints */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Add spacing for better readability */
+  #result_table th,
+  #result_table td {
+    padding: 12px !important;
+    font-size: 14px;
+  }
+.result_table_before{
+    visibility: visible;
+}
 }
